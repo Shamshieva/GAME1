@@ -8,10 +8,12 @@ pygame.display.set_caption('Runner') # set name
 clock = pygame.time.Clock()
 test_fount = pygame.font.Font(None, 50)
 
-test_surface = pygame.image.load('img/game-bg.jpg') # 800, 500
-ground_surface = pygame.image.load('img/arrow-keys.png')
+main_surface = pygame.image.load('img/game-bg.jpg') # 800, 500
+key_surface = pygame.image.load('img/arrow-keys.png')
 text_surface = test_fount.render('Wolf game', False, 'Black')
 
+wolf_L_surface = pygame.image.load('img/wolf/wolf-p-0.png')
+wolf_R_surface = pygame.image.load('img/wolf/wolf-p-1.png')
 
 while True:
     for event in pygame.event.get():
@@ -19,8 +21,8 @@ while True:
             pygame.quit()
             exit()
 
-    screen.blit(test_surface, (0,0)) # x, y
-    screen.blit(ground_surface, (650,250))
+    screen.blit(main_surface, (0,0)) # x, y
+    screen.blit(key_surface, (650,250))
     screen.blit(text_surface, (200,20))
 
     pygame.display.update()
